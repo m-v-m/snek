@@ -45,3 +45,19 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+*.dll
+/Release
+/.vs/snek/v14
+/Debug
+*.tlog
+snek/Debug/vc140.idb
+snek/Debug/main.obj
+*.log
+snek/Release/vc140.pdb
+*.sdf
+snek.sln
+*.opendb
+snek/Debug/vc140.pdb
+*.obj
+snek/snek.vcxproj
+*.filters

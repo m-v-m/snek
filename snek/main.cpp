@@ -1,24 +1,37 @@
 #include <SFML/Graphics.hpp>
+#include <SFML/Window.hpp>
+#include <SFML/System.hpp>
+#include <iostream>
 
 int main()
 {
-	sf::RenderWindow window(sf::VideoMode(200, 200), "SFML works!");
-	sf::CircleShape shape(100.f);
-	shape.setFillColor(sf::Color::Green);
 
-	while (window.isOpen())
-	{
-		sf::Event event;
-		while (window.pollEvent(event))
-		{
-			if (event.type == sf::Event::Closed)
-				window.close();
+	sf::RenderWindow gameFrame(sf::VideoMode(512, 512, 32), "Snek", sf::Style::Default);
+	sf::Sprite snake;sf::Texture texture;
+	if (!texture.loadFromFile("head.png")) {}
+	snake.setTexture(texture);
+
+	while (gameFrame.isOpen()) {
+		sf::Event e;
+		gameFrame.clear(sf::Color::Black);		
+		gameFrame.draw(snake);
+		gameFrame.display();
+		while (gameFrame.pollEvent(e)) {
+			switch (e.type) {
+			case sf::Event::Closed:
+				gameFrame.close();
+				break;
+			case sf::Event::KeyPressed:
+				if (e.key.code == sf::Keyboard::S) {
+					snake.move(1, 1);
+					std::cout << "s";
+				}
+				break;
+			default:
+				break;
+			}
+
 		}
-
-		window.clear();
-		window.draw(shape);
-		window.display();
 	}
-
 	return 0;
 }
