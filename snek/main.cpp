@@ -10,7 +10,6 @@ int main()
 	sf::Sprite snake;sf::Texture texture;
 	if (!texture.loadFromFile("head.png")) {}
 	snake.setTexture(texture);
-
 	while (gameFrame.isOpen()) {
 		sf::Event e;
 		gameFrame.clear(sf::Color::Black);		
@@ -33,5 +32,5 @@ int main()
 
 		}
 	}
-	return 0;
+	return 1;
 }
