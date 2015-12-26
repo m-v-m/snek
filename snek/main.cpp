@@ -29,8 +29,7 @@ int main()
 			default:
 				break;
 			}
-
 		}
 	}
-	return 1;
+	return 0;
 }
